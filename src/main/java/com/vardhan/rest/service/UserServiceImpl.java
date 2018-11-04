@@ -8,11 +8,14 @@ import com.vardhan.rest.bean.User;
 
 public class UserServiceImpl implements UserService {
 	
-	private List<User> usersList = new ArrayList<User>();
-	public List<User> getAllUsers() {
+	private static List<User> usersList = new ArrayList<User>();
+	static {
 		usersList.add(new User(1, "Gunavardhan", "(9949026410", "Hyderabad", "TS"));
 		usersList.add(new User(2, "Pawan", "(7949026412", "Guntur", "AP"));
 		usersList.add(new User(3, "MSD", "(6949025414", "Ranchi", "Jharkhand"));
+	}
+	
+	public List<User> getAllUsers() {
 		return usersList;
 	}
 	public User getUserByUserId(Integer userId) {
